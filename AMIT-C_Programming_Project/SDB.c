@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include "STD.h"
 #include "SDB.h"
-
 
 student Students[MAX_DB_SIZE];
 uint8 studentCount;

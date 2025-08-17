@@ -1,12 +1,6 @@
-#include <stdio.h>
-#include "STD.h"
-#include "SDB.h"
+#include "SDBAPP.h"
 
 int main() {
-	student Students[10];
-
-
-
-
+	SDB_APP();
 	return 0;
 }

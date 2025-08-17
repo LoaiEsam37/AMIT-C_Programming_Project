@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include "STD.h"
 
-unsigned int readUInt(const char* prompt) {
-	int temp;
+uint32 readUInt(const int8* prompt) {
+    int32 temp;
 	while (1) {
 		printf("%s", prompt);
 		if (scanf_s("%d", &temp) == 1 && temp >= 0) {
-			return (unsigned int)temp;
+			return (uint32)temp;
 		}
 		else {
 			printf("Invalid input! Enter a non-negative integer.\n");
@@ -13,8 +13,8 @@ unsigned int readUInt(const char* prompt) {
 	}
 };
 
-int readInt(const char* prompt) {
-    int temp;
+int32 readInt(const int8* prompt) {
+    int32 temp;
     while (1) {
         printf("%s", prompt);
         if (scanf_s("%d", &temp) == 1) {

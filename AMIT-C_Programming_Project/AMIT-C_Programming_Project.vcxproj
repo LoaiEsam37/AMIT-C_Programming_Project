@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="SDB.h" />
+    <ClInclude Include="SDBAPP.h" />
     <ClInclude Include="STD.h" />
   </ItemGroup>
   <ItemGroup>
