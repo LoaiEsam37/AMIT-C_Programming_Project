@@ -11,7 +11,7 @@ typedef unsigned int uint32;
 typedef int int32;
 typedef enum {FALSE, TRUE} bool;
 
-unsigned int readUInt(const char* prompt);
-int readInt(const char* prompt);
+uint32 readUInt(const int8* prompt);
+int32 readInt(const int8* prompt);
 
 #endif // STD_H

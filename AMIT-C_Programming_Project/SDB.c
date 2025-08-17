@@ -20,11 +20,20 @@ bool SDB_AddEntry() {
 		return FALSE;
 	}
 
+
 	printf("Enter Student Data:\n");
 
 	student Instance;
 
-	Instance.Student_ID     = readUInt("Student ID: ");
+	uint8 studentId = readUInt("Student ID: ");
+	if (SDB_IsIdExist(studentId)) {
+		printf("Error: Student ID %u already exists.\n", studentId);
+		return FALSE;
+	}
+	else {
+		Instance.Student_ID = studentId;
+	}
+
 	Instance.Student_year   = readUInt("Student Year: ");
 	Instance.Course1_ID     = readUInt("First Course ID: ");
 	Instance.Course1_grade  = readUInt("First Course Grade: ");
@@ -40,7 +49,7 @@ bool SDB_AddEntry() {
 }
 
 
-void SDB_DeletEntry(uint32 id) {
+void SDB_DeleteEntry(uint32 id) {
 	int found = -1;
 	for (uint8 i = 0; i < studentCount; i++) {
 		if (Students[i].Student_ID == id) {
@@ -60,15 +69,15 @@ void SDB_DeletEntry(uint32 id) {
 bool SDB_ReadEntry(uint32 id) {
 	for (uint8 i = 0; i < studentCount; i++) {
 		if (Students[i].Student_ID == id) {
-		student Instance = Students[id];
-		printf("Student ID: %d", Instance.Student_ID);
-		printf("Student Year: %d", Instance.Student_year);
-		printf("First Course ID: %d", Instance.Course1_ID);
-		printf("First Course Grade: %d", Instance.Course1_grade);
-		printf("Second Course ID: %d", Instance.Course2_ID);
-		printf("Second Course Grade: %d", Instance.Course2_grade);
-		printf("Third Course ID: %d", Instance.Course3_ID);
-		printf("Third Course Grade: %d", Instance.Course3_grade);
+		student Instance = Students[i];
+		printf("Student ID: %d\n", Instance.Student_ID);
+		printf("Student Year: %d\n", Instance.Student_year);
+		printf("First Course ID: %d\n", Instance.Course1_ID);
+		printf("First Course Grade: %d\n", Instance.Course1_grade);
+		printf("Second Course ID: %d\n", Instance.Course2_ID);
+		printf("Second Course Grade: %d\n", Instance.Course2_grade);
+		printf("Third Course ID: %d\n", Instance.Course3_ID);
+		printf("Third Course Grade: %d\n", Instance.Course3_grade);
 		return TRUE;
 		}
 	}
