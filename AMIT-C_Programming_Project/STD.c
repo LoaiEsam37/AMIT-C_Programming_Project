@@ -11,7 +11,7 @@ uint32 readUInt(const int8* prompt) {
 			printf("Invalid input! Enter a non-negative integer.\n");
 
             int ch;
-            while ((ch = getchar()) != '\n' && ch != EOF);
+            while ((ch = getchar()) != '\n');
 		}
 	}
 };
@@ -27,7 +27,7 @@ int32 readInt(const int8* prompt) {
             printf("Invalid input! Try again.\n");
 
             int ch;
-            while ((ch = getchar()) != '\n' && ch != EOF);
+            while ((ch = getchar()) != '\n');
         }
     }
     return temp;
